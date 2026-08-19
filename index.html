@@ -3,91 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Project</title>
+
+  <title>BLACK PROJECT — Premium Streetwear</title>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #000;
+      background: #050505;
       color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     header {
-      padding: 25px 6%;
+      height: 80px;
+      padding: 0 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #222;
+      justify-content: space-between;
+      border-bottom: 1px solid #1b1b1b;
+      position: sticky;
+      top: 0;
+      background: rgba(5,5,5,.95);
+      z-index: 10;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 3px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      margin-left: 25px;
-      font-size: 14px;
+      font-size: 12px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    .cart {
+      border: 1px solid #333;
+      padding: 10px 15px;
     }
 
     .hero {
-      min-height: 75vh;
+      min-height: 85vh;
+      padding: 8%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8%;
-      background: linear-gradient(
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.85)
-      );
+      background:
+        radial-gradient(circle at 80% 30%, #202020 0%, transparent 35%),
+        #050505;
     }
 
-    .hero p {
-      font-size: 13px;
-      letter-spacing: 4px;
+    .tag {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #999;
+      margin-bottom: 25px;
       text-transform: uppercase;
-      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(55px, 10vw, 130px);
-      line-height: .9;
-      letter-spacing: -5px;
-      max-width: 900px;
+      font-size: clamp(60px, 11vw, 150px);
+      line-height: .82;
+      letter-spacing: -7px;
+      max-width: 1000px;
     }
 
-    .hero button {
+    .hero p {
+      max-width: 500px;
+      margin-top: 35px;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
       width: fit-content;
-      margin-top: 40px;
-      padding: 16px 35px;
+      margin-top: 35px;
+      padding: 17px 35px;
       background: #fff;
       color: #000;
-      border: none;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
       text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    .products {
-      padding: 80px 6%;
+    .section {
+      padding: 100px 6%;
     }
 
-    .products h2 {
-      font-size: 32px;
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
       margin-bottom: 40px;
     }
 
-    .grid {
+    .section-title h2 {
+      font-size: 38px;
+      letter-spacing: -2px;
+    }
+
+    .section-title span {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -95,34 +132,99 @@
 
     .product {
       background: #111;
-      padding: 20px;
-      min-height: 300px;
+      min-height: 430px;
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      padding: 25px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      background: #161616;
+    }
+
+    .product-image {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1b1b1b, #080808);
+    }
+
+    .product-info {
+      position: relative;
+      z-index: 2;
     }
 
     .product h3 {
+      font-size: 18px;
       margin-bottom: 8px;
     }
 
     .product p {
-      color: #aaa;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .banner {
+      margin-top: 80px;
+      min-height: 400px;
+      padding: 60px;
+      display: flex;
+      align-items: end;
+      background: #111;
+    }
+
+    .banner h2 {
+      font-size: clamp(40px, 7vw, 90px);
+      line-height: .9;
+      letter-spacing: -4px;
     }
 
     footer {
-      padding: 40px 6%;
-      border-top: 1px solid #222;
-      color: #777;
+      padding: 50px 6%;
+      border-top: 1px solid #1b1b1b;
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 12px;
     }
 
     @media (max-width: 700px) {
+
+      header {
+        height: 70px;
+      }
+
       nav {
         display: none;
       }
 
-      .grid {
+      .hero {
+        min-height: 75vh;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .products {
         grid-template-columns: 1fr;
+      }
+
+      .product {
+        min-height: 380px;
+      }
+
+      .banner {
+        padding: 30px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
       }
     }
   </style>
@@ -131,52 +233,134 @@
 <body>
 
   <header>
-    <div class="logo">BLACK PROJECT</div>
 
-    <nav>
-      <a href="#">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#">Instagram</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <p>Black Project — Portugal</p>
-
-    <h1>YOUR<br>STYLE.<br>YOUR<br>PROJECT.</h1>
-
-    <button onclick="document.getElementById('produtos').scrollIntoView()">
-      Comprar agora
-    </button>
-  </section>
-
-  <section class="products" id="produtos">
-
-    <h2>Produtos em destaque</h2>
-
-    <div class="grid">
-
-      <div class="product">
-        <h3>Óculos Black Project</h3>
-        <p>€29,90</p>
-      </div>
-
-      <div class="product">
-        <h3>Black Project Cap</h3>
-        <p>€24,90</p>
-      </div>
-
-      <div class="product">
-        <h3>Black Project T-Shirt</h3>
-        <p>€34,90</p>
-      </div>
-
+    <div class="logo">
+      BLACK PROJECT
     </div>
 
-  </section>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#" class="cart">Cart (0)</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="tag">
+        BLACK PROJECT — PORTUGAL
+      </div>
+
+      <h1>
+        MOVE<br>
+        DIFFERENT.
+      </h1>
+
+      <p>
+        Streetwear, eyewear and accessories selected
+        for those who don't follow the ordinary.
+      </p>
+
+      <a href="#shop" class="button">
+        Shop now
+      </a>
+
+    </section>
+
+
+    <section class="section" id="shop">
+
+      <div class="section-title">
+
+        <h2>Featured</h2>
+
+        <span>
+          NEW ARRIVALS
+        </span>
+
+      </div>
+
+
+      <div class="products">
+
+        <div class="product">
+
+          <div class="product-image"></div>
+
+          <div class="product-info">
+
+            <h3>Black Project Eyewear</h3>
+
+            <p>€29,90</p>
+
+          </div>
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-image"></div>
+
+          <div class="product-info">
+
+            <h3>Black Project Cap</h3>
+
+            <p>€24,90</p>
+
+          </div>
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-image"></div>
+
+          <div class="product-info">
+
+            <h3>Black Project T-Shirt</h3>
+
+            <p>€34,90</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="banner" id="about">
+
+        <h2>
+          LESS<br>
+          NOISE.<br>
+          MORE<br>
+          STYLE.
+        </h2>
+
+      </div>
+
+    </section>
+
+  </main>
+
 
   <footer>
-    © 2026 Black Project — Portugal
+
+    <span>
+      © 2026 BLACK PROJECT
+    </span>
+
+    <span>
+      PORTUGAL
+    </span>
+
   </footer>
 
 </body>
