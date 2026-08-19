@@ -1,117 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Black Project — seleção exclusiva de sneakers.">
-  <title>BLACK PROJECT — Sneakers</title>
-  <style>
-    :root { --ink:#070707; --paper:#f4f2ed; --line:#292929; --muted:#a8a8a8; --blue:#12c8e9; }
-    * { box-sizing:border-box; margin:0; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--ink); color:var(--paper); font-family:Arial,Helvetica,sans-serif; }
-    a { color:inherit; text-decoration:none; }
-    header { height:76px; padding:0 5vw; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; background:rgba(7,7,7,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
-    .logo { font-weight:900; letter-spacing:3px; font-size:17px; }
-    nav { display:flex; gap:24px; align-items:center; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
-    .bag { border:1px solid #555; padding:10px 13px; }
-    .hero { min-height:72vh; padding:9vw 5vw 6vw; display:flex; align-items:flex-end; background:linear-gradient(90deg,rgba(0,0,0,.88) 5%,rgba(0,0,0,.25) 72%),url('l.jpeg') center 42%/cover no-repeat; }
-    .eyebrow { color:var(--blue); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:20px; }
-    h1 { max-width:780px; font-size:clamp(56px,10vw,138px); line-height:.8; letter-spacing:-.08em; text-transform:uppercase; }
-    .hero p { max-width:390px; line-height:1.55; color:#d0d0d0; margin:28px 0; font-size:15px; }
-    .cta { display:inline-block; padding:15px 22px; background:var(--paper); color:var(--ink); font-weight:800; text-transform:uppercase; font-size:11px; letter-spacing:1px; }
-    section { padding:86px 5vw; }
-    .section-top { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:30px; }
-    h2 { font-size:clamp(34px,5vw,64px); letter-spacing:-.07em; text-transform:uppercase; }
-    .section-top p { color:var(--muted); max-width:260px; font-size:13px; line-height:1.45; }
-    .products { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .product { background:#111; border:1px solid #222; min-width:0; }
-    .product-photo { position:relative; height:420px; overflow:hidden; background:#181818; }
-    .product-photo img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-    .product:hover .product-photo img { transform:scale(1.04); }
-    .pill { position:absolute; top:15px; left:15px; background:var(--paper); color:var(--ink); padding:7px 9px; font-weight:800; font-size:10px; letter-spacing:.8px; }
-    .product-info { padding:20px; }
-    .product-name { font-size:20px; font-weight:800; letter-spacing:-.04em; }
-    .product-meta { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin:8px 0 20px; }
-    .sizes { display:flex; gap:7px; margin-bottom:16px; }
-    .size { padding:8px 10px; border:1px solid #4b4b4b; background:transparent; color:var(--paper); cursor:pointer; font-size:11px; }
-    .size.selected { background:var(--paper); color:var(--ink); border-color:var(--paper); }
-    .add { width:100%; border:1px solid var(--paper); background:transparent; color:var(--paper); padding:13px; cursor:pointer; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:11px; }
-    .add:hover { background:var(--paper); color:var(--ink); }
-    .details { background:var(--paper); color:var(--ink); }
-    .details .section-top p { color:#565656; }
-    .gallery { display:grid; grid-template-columns:1.25fr .75fr .75fr; gap:14px; }
-    .gallery figure { height:360px; overflow:hidden; position:relative; background:#ddd; }
-    .gallery figure:first-child { height:480px; }
-    .gallery img { width:100%; height:100%; object-fit:cover; }
-    .gallery figcaption { position:absolute; left:13px; bottom:13px; padding:7px 9px; background:rgba(0,0,0,.78); color:#fff; font-size:10px; text-transform:uppercase; letter-spacing:1px; }
-    .note { display:flex; justify-content:space-between; gap:25px; padding:23px 5vw; border-top:1px solid #2a2a2a; color:var(--muted); font-size:12px; line-height:1.5; }
-    .toast { position:fixed; right:20px; bottom:20px; transform:translateY(120px); transition:.3s; background:var(--paper); color:var(--ink); padding:15px 18px; z-index:30; font-size:13px; font-weight:700; box-shadow:0 12px 40px rgba(0,0,0,.35); }
-    .toast.show { transform:translateY(0); }
-    footer { padding:38px 5vw; display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--line); color:#858585; font-size:11px; text-transform:uppercase; letter-spacing:1px; }
-    @media (max-width:800px) { nav a { display:none; } .products { grid-template-columns:1fr; } .product-photo { height:440px; } .gallery { grid-template-columns:1fr; } .gallery figure,.gallery figure:first-child { height:380px; } section { padding:62px 5vw; } .note,footer { flex-direction:column; } }
-  </style>
-</head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Black Project — seleção exclusiva de sneakers."><title>BLACK PROJECT — Sneakers</title>
+<style>
+:root{--ink:#070707;--paper:#f4f2ed;--line:#292929;--muted:#a8a8a8;--blue:#12c8e9}*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}a{color:inherit;text-decoration:none}header{height:76px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;background:rgba(7,7,7,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.logo{font-weight:900;letter-spacing:3px;font-size:17px}nav{display:flex;gap:24px;align-items:center;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.bag{border:1px solid #555;padding:10px 13px;background:transparent;color:var(--paper);cursor:pointer}.hero{min-height:72vh;padding:9vw 5vw 6vw;display:flex;align-items:flex-end;background:linear-gradient(90deg,rgba(0,0,0,.88) 5%,rgba(0,0,0,.25) 72%),url('l.jpeg') center 42%/cover no-repeat}.eyebrow{color:var(--blue);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}h1{max-width:780px;font-size:clamp(56px,10vw,138px);line-height:.8;letter-spacing:-.08em;text-transform:uppercase}.hero p{max-width:390px;line-height:1.55;color:#d0d0d0;margin:28px 0;font-size:15px}.cta{display:inline-block;padding:15px 22px;background:var(--paper);color:var(--ink);font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:1px}section{padding:86px 5vw}.section-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.07em;text-transform:uppercase}.section-top p{color:var(--muted);max-width:260px;font-size:13px;line-height:1.45}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:#111;border:1px solid #222;min-width:0}.product-photo{position:relative;height:420px;overflow:hidden;background:#181818}.product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.product:hover .product-photo img{transform:scale(1.04)}.pill{position:absolute;top:15px;left:15px;background:var(--paper);color:var(--ink);padding:7px 9px;font-weight:800;font-size:10px;letter-spacing:.8px}.product-info{padding:20px}.product-name{font-size:20px;font-weight:800;letter-spacing:-.04em}.product-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:8px 0 20px}.sizes{display:flex;gap:7px;margin-bottom:16px}.size{padding:8px 10px;border:1px solid #4b4b4b;background:transparent;color:var(--paper);cursor:pointer;font-size:11px}.size.selected{background:var(--paper);color:var(--ink);border-color:var(--paper)}.add,.checkout{width:100%;border:1px solid var(--paper);background:transparent;color:var(--paper);padding:13px;cursor:pointer;font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:11px}.add:hover,.checkout{background:var(--paper);color:var(--ink)}.details{background:var(--paper);color:var(--ink)}.details .section-top p{color:#565656}.gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:14px}.gallery figure{height:360px;overflow:hidden;position:relative;background:#ddd}.gallery figure:first-child{height:480px}.gallery img{width:100%;height:100%;object-fit:cover}.gallery figcaption{position:absolute;left:13px;bottom:13px;padding:7px 9px;background:rgba(0,0,0,.78);color:#fff;font-size:10px;text-transform:uppercase;letter-spacing:1px}.note{display:flex;justify-content:space-between;gap:25px;padding:23px 5vw;border-top:1px solid #2a2a2a;color:var(--muted);font-size:12px;line-height:1.5}footer{padding:38px 5vw;display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);color:#858585;font-size:11px;text-transform:uppercase;letter-spacing:1px}.toast{position:fixed;right:20px;bottom:20px;transform:translateY(120px);transition:.3s;background:var(--paper);color:var(--ink);padding:15px 18px;z-index:40;font-size:13px;font-weight:700;box-shadow:0 12px 40px rgba(0,0,0,.35)}.toast.show{transform:translateY(0)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;display:none;align-items:flex-end;justify-content:center;padding:20px}.modal.open{display:flex}.checkout-box{width:min(680px,100%);max-height:90vh;overflow:auto;background:var(--paper);color:var(--ink);padding:28px}.checkout-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}.checkout-head h2{font-size:34px}.close{border:0;background:transparent;font-size:28px;cursor:pointer}.cart-lines{border-top:1px solid #ccc;margin-bottom:20px}.cart-line{padding:12px 0;border-bottom:1px solid #ccc;display:flex;justify-content:space-between;gap:10px;font-size:14px}.empty{color:#666;padding:16px 0}.total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin:18px 0 25px}.payment-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}.payments{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:20px}.pay{padding:13px;border:1px solid #aaa;background:#fff;text-align:left;cursor:pointer;font-weight:700}.pay.selected{border:2px solid var(--ink);background:#e8faff}.pay small{display:block;margin-top:4px;color:#666;font-weight:400}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-grid input{width:100%;padding:12px;border:1px solid #aaa;background:#fff}.form-grid .wide{grid-column:1/-1}.checkout[disabled]{opacity:.45;cursor:not-allowed}@media(max-width:800px){nav a{display:none}.products,.gallery{grid-template-columns:1fr}.product-photo{height:440px}.gallery figure,.gallery figure:first-child{height:380px}section{padding:62px 5vw}.note,footer{flex-direction:column}.form-grid{grid-template-columns:1fr}}
+</style></head>
 <body>
-  <header>
-    <a class="logo" href="#top">BLACK PROJECT</a>
-    <nav><a href="#shop">Shop</a><a href="#details">Detalhes</a><a class="bag" href="#shop">Carrinho (<span id="cart-count">0</span>)</a></nav>
-  </header>
-  <main id="top">
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Sneaker selection · Portugal</div>
-        <h1>Move<br>different.</h1>
-        <p>Uma seleção limitada de três modelos. Escolhe o teu par e reserva antes de esgotar.</p>
-        <a class="cta" href="#shop">Ver coleção</a>
-      </div>
-    </section>
-    <section id="shop">
-      <div class="section-top"><h2>Disponível agora</h2><p>Fotos reais dos produtos. Tamanhos e stock indicados em cada modelo.</p></div>
-      <div class="products">
-        <article class="product" data-product="Nike Air Force 1" data-price="65">
-          <div class="product-photo"><img src="j.jpeg" alt="Nike Air Force 1 branca"><span class="pill">€65</span></div>
-          <div class="product-info"><h3 class="product-name">Nike Air Force 1</h3><div class="product-meta"><span>Branco</span><span>€65</span></div><div class="sizes"><button class="size selected" type="button">41</button><button class="size" type="button">42</button></div><button class="add" type="button">Adicionar ao carrinho</button></div>
-        </article>
-        <article class="product" data-product="BAPE STA Black / Blue" data-price="85">
-          <div class="product-photo"><img src="l.jpeg" alt="BAPE STA preto e azul"><span class="pill">€85</span></div>
-          <div class="product-info"><h3 class="product-name">BAPE STA Black / Blue</h3><div class="product-meta"><span>Preto / azul</span><span>€85</span></div><div class="sizes"><button class="size selected" type="button">43</button></div><button class="add" type="button">Adicionar ao carrinho</button></div>
-        </article>
-        <article class="product" data-product="Yeezy 350" data-price="75">
-          <div class="product-photo"><img src="e.jpeg" alt="Yeezy 350 branca"><span class="pill">€75</span></div>
-          <div class="product-info"><h3 class="product-name">Yeezy 350</h3><div class="product-meta"><span>Branco</span><span>€75</span></div><div class="sizes"><button class="size selected" type="button">41</button></div><button class="add" type="button">Adicionar ao carrinho</button></div>
-        </article>
-      </div>
-    </section>
-    <section class="details" id="details">
-      <div class="section-top"><h2>Detalhes reais</h2><p>Cada par foi fotografado para mostrares o que vais receber.</p></div>
-      <div class="gallery">
-        <figure><img src="n.jpeg" alt="Sola azul do BAPE STA"><figcaption>BAPE STA · sola azul</figcaption></figure>
-        <figure><img src="g.jpeg" alt="Nike Air Force 1 em branco"><figcaption>Air Force 1 · frente</figcaption></figure>
-        <figure><img src="c.jpeg" alt="Calcanhar do Yeezy 350"><figcaption>Yeezy 350 · detalhe</figcaption></figure>
-      </div>
-    </section>
-    <div class="note"><span>Entrega e pagamento serão configurados na próxima etapa.</span><span>Para já, o carrinho regista a tua seleção.</span></div>
-  </main>
-  <footer><span>© 2026 Black Project</span><span>Portugal</span></footer>
-  <div class="toast" id="toast" role="status"></div>
-  <script>
-    let count = 0;
-    document.querySelectorAll('.size').forEach(button => button.addEventListener('click', () => {
-      button.parentElement.querySelectorAll('.size').forEach(item => item.classList.remove('selected'));
-      button.classList.add('selected');
-    }));
-    document.querySelectorAll('.add').forEach(button => button.addEventListener('click', () => {
-      const card = button.closest('.product');
-      const name = card.dataset.product;
-      const size = card.querySelector('.size.selected').textContent;
-      count += 1;
-      document.getElementById('cart-count').textContent = count;
-      const toast = document.getElementById('toast');
-      toast.textContent = name + ' · tamanho ' + size + ' adicionado ao carrinho';
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2600);
-    }));
-  </script>
-</body>
-</html>
+<header><a class="logo" href="#top">BLACK PROJECT</a><nav><a href="#shop">Shop</a><a href="#details">Detalhes</a><button class="bag" id="open-cart" type="button">Carrinho (<span id="cart-count">0</span>)</button></nav></header>
+<main id="top"><section class="hero"><div><div class="eyebrow">Sneaker selection · Portugal</div><h1>Move<br>different.</h1><p>Uma seleção limitada de três modelos. Escolhe o teu par e reserva antes de esgotar.</p><a class="cta" href="#shop">Ver coleção</a></div></section>
+<section id="shop"><div class="section-top"><h2>Disponível agora</h2><p>Fotos reais dos produtos. Tamanhos e stock indicados em cada modelo.</p></div><div class="products">
+<article class="product" data-product="Nike Air Force 1" data-price="65"><div class="product-photo"><img src="j.jpeg" alt="Nike Air Force 1 branca"><span class="pill">€65</span></div><div class="product-info"><h3 class="product-name">Nike Air Force 1</h3><div class="product-meta"><span>Branco</span><span>€65</span></div><div class="sizes"><button class="size selected" type="button">41</button><button class="size" type="button">42</button></div><button class="add" type="button">Adicionar ao carrinho</button></div></article>
+<article class="product" data-product="BAPE STA Black / Blue" data-price="85"><div class="product-photo"><img src="l.jpeg" alt="BAPE STA preto e azul"><span class="pill">€85</span></div><div class="product-info"><h3 class="product-name">BAPE STA Black / Blue</h3><div class="product-meta"><span>Preto / azul</span><span>€85</span></div><div class="sizes"><button class="size selected" type="button">43</button></div><button class="add" type="button">Adicionar ao carrinho</button></div></article>
+<article class="product" data-product="Yeezy 350" data-price="75"><div class="product-photo"><img src="e.jpeg" alt="Yeezy 350 branca"><span class="pill">€75</span></div><div class="product-info"><h3 class="product-name">Yeezy 350</h3><div class="product-meta"><span>Branco</span><span>€75</span></div><div class="sizes"><button class="size selected" type="button">41</button></div><button class="add" type="button">Adicionar ao carrinho</button></div></article>
+</div></section>
+<section class="details" id="details"><div class="section-top"><h2>Detalhes reais</h2><p>Cada par foi fotografado para mostrares o que vais receber.</p></div><div class="gallery"><figure><img src="n.jpeg" alt="Sola azul do BAPE STA"><figcaption>BAPE STA · sola azul</figcaption></figure><figure><img src="g.jpeg" alt="Nike Air Force 1 em branco"><figcaption>Air Force 1 · frente</figcaption></figure><figure><img src="c.jpeg" alt="Calcanhar do Yeezy 350"><figcaption>Yeezy 350 · detalhe</figcaption></figure></div></section><div class="note"><span>Pagamentos disponíveis: MB Way, Multibanco, PayPal e Klarna.</span><span>O pedido é confirmado por WhatsApp.</span></div></main>
+<footer><span>© 2026 Black Project</span><span>Portugal</span></footer><div class="toast" id="toast" role="status"></div>
+<div class="modal" id="checkout-modal" aria-hidden="true"><div class="checkout-box"><div class="checkout-head"><div><div class="eyebrow">Finalizar pedido</div><h2>O teu carrinho</h2></div><button class="close" id="close-cart" type="button" aria-label="Fechar">×</button></div><div class="cart-lines" id="cart-lines"></div><div class="total"><span>Total</span><span id="cart-total">€0</span></div><p class="payment-title">Escolhe o método de pagamento</p><div class="payments"><button class="pay selected" data-pay="MB Way" type="button">MB Way<small>Confirmação por telemóvel</small></button><button class="pay" data-pay="Multibanco" type="button">Multibanco<small>Referência após confirmação</small></button><button class="pay" data-pay="PayPal" type="button">PayPal<small>Ligação de pagamento a configurar</small></button><button class="pay" data-pay="Klarna" type="button">Klarna<small>Ligação de pagamento a configurar</small></button></div><div class="form-grid"><input id="customer-name" class="wide" placeholder="Nome completo"><input id="customer-phone" placeholder="O teu telemóvel"><input id="customer-city" placeholder="Cidade / entrega"></div><button class="checkout" id="send-order" type="button" disabled>Enviar pedido por WhatsApp</button></div></div>
+<script>
+const cart=[];let payment='MB Way';const euro=n=>new Intl.NumberFormat('pt-PT',{style:'currency',currency:'EUR'}).format(n);const toast=document.getElementById('toast');
+function renderCart(){const lines=document.getElementById('cart-lines');const total=cart.reduce((sum,item)=>sum+item.price,0);document.getElementById('cart-count').textContent=cart.length;document.getElementById('cart-total').textContent=euro(total);document.getElementById('send-order').disabled=!cart.length;lines.innerHTML=cart.length?cart.map((item,i)=>'<div class="cart-line"><span>'+item.name+' · '+item.size+'</span><span>'+euro(item.price)+'</span></div>').join(''):'<div class="empty">O teu carrinho está vazio.</div>'}
+document.querySelectorAll('.size').forEach(button=>button.addEventListener('click',()=>{button.parentElement.querySelectorAll('.size').forEach(item=>item.classList.remove('selected'));button.classList.add('selected')}));
+document.querySelectorAll('.add').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.product');const item={name:card.dataset.product,price:Number(card.dataset.price),size:card.querySelector('.size.selected').textContent};cart.push(item);renderCart();toast.textContent=item.name+' · tamanho '+item.size+' adicionado ao carrinho';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)}));
+function openCart(){renderCart();document.getElementById('checkout-modal').classList.add('open');document.getElementById('checkout-modal').setAttribute('aria-hidden','false')}function closeCart(){document.getElementById('checkout-modal').classList.remove('open');document.getElementById('checkout-modal').setAttribute('aria-hidden','true')}document.getElementById('open-cart').addEventListener('click',openCart);document.getElementById('close-cart').addEventListener('click',closeCart);document.getElementById('checkout-modal').addEventListener('click',e=>{if(e.target.id==='checkout-modal')closeCart()});
+document.querySelectorAll('.pay').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.pay').forEach(item=>item.classList.remove('selected'));button.classList.add('selected');payment=button.dataset.pay}));
+document.getElementById('send-order').addEventListener('click',()=>{const name=document.getElementById('customer-name').value.trim();const phone=document.getElementById('customer-phone').value.trim();const city=document.getElementById('customer-city').value.trim();if(!name||!phone||!city){toast.textContent='Preenche nome, telemóvel e cidade para continuar.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600);return}const total=cart.reduce((sum,item)=>sum+item.price,0);const items=cart.map(item=>'- '+item.name+' | tamanho '+item.size+' | '+euro(item.price)).join('%0A');const message='Olá Black Project! Quero fazer este pedido:%0A%0A'+items+'%0A%0ATotal: '+euro(total)+'%0AMétodo: '+payment+'%0ANome: '+encodeURIComponent(name)+'%0ATelemóvel: '+encodeURIComponent(phone)+'%0ACidade/entrega: '+encodeURIComponent(city);window.open('https://wa.me/351932116297?text='+message,'_blank')});
+</script></body></html>
